@@ -14,7 +14,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY ./capTest ./
+COPY ./ ./
 
-EXPOSE 8080
+EXPOSE 3000
 CMD [ "node", "capTest/index.js" ]
