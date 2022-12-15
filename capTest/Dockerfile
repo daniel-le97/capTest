@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY ./capTest/package*.json ./
 
 RUN npm install
-RUN npm run setup:server
+# RUN npm run setup:server
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -17,4 +17,4 @@ RUN npm run setup:server
 COPY ./capTest ./
 
 EXPOSE 80
-CMD [ "node", "index.js" ]
+CMD [ "node", "capTest/index.js" ]
