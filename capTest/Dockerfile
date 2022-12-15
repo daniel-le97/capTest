@@ -18,12 +18,12 @@
 
 # EXPOSE 3000
 # CMD [ "node", "capTest/index.js" ]
-FROM node:16-alpine
+FROM node:16
 # Uncomment the line above if you want to use a Dockerfile instead of templateId
 WORKDIR /app
 
 COPY ./capTest/package*.json ./
-RUN npm install --production && npm cache clean --force
+RUN npm install  && npm audit fix
 COPY ./capTest ./
 ENV NODE_ENV production
 ENV PORT 80
