@@ -16,4 +16,4 @@ RUN npm install
 COPY ./capTest ./
 
 EXPOSE 80
-CMD [ "node", "index.js" ]
+CMD [ "npm", "start" ]
