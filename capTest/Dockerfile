@@ -29,7 +29,7 @@ ENV NODE_ENV production
 ENV PORT 80
 EXPOSE 80
 
-CMD [ "node", "capTest/index.js" ]
+CMD [ "npm", "Start" ]
 
 # FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 # WORKDIR /app
