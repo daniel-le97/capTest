@@ -1,17 +1,16 @@
 
 FROM node:16 AS build-env
-# Uncomment the line above if you want to use a Dockerfile instead of templateId
+
 WORKDIR /app
 
 COPY ./capTest/package*.json ./
 RUN npm install  && npm audit fix
-RUN ls
-COPY ./capTest ./
 
+RUN ls
+COPY ./ ./
 
 ENV PORT=80
 EXPOSE 80
-
 
 CMD [ "npm", "start" ]
 
@@ -33,3 +32,5 @@ CMD [ "npm", "start" ]
 # COPY --from=build-env /app/out .
 # # ------------------------------------⬇ replace with your apps name + .dll
 # CMD ASPNETCORE_URLS=http://* dotnet capTest.dll
+
+
