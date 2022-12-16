@@ -5,13 +5,15 @@ WORKDIR /app
 
 COPY ./capTest/package*.json ./
 RUN npm install  && npm audit fix
+RUN ls
 COPY ./capTest ./
 
-FROM node:16
-WORKDIR /app
-COPY --from=build-env /app/out .
 
-CMD [ "npm", "Start" ]
+ENV PORT=80
+EXPOSE 80
+
+
+CMD [ "npm", "start" ]
 
 # FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 # WORKDIR /app
