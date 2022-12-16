@@ -3,7 +3,7 @@ FROM node:16 AS build-env
 
 WORKDIR /app
 
-COPY ./capTest/package*.json ./
+COPY package*.json ./
 RUN npm install  && npm audit fix
 
 RUN ls
