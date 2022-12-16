@@ -12,7 +12,7 @@ COPY ./ ./
 ENV PORT=80
 EXPOSE 80
 
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]
 
 # FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 # WORKDIR /app
