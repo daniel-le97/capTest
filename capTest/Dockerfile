@@ -1,5 +1,5 @@
 
-FROM node:16 AS build-env
+FROM node:16-alpine AS build-env
 
 WORKDIR /app
 
