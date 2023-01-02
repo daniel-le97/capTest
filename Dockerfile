@@ -3,11 +3,11 @@ FROM node:16-alpine AS build-env
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY /capTest/package*.json ./
 RUN npm install  && npm audit fix
 
 RUN ls
-COPY ./ ./
+COPY ./capTest ./
 
 ENV PORT=80
 EXPOSE 80
